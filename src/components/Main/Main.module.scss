@@ -1,0 +1,186 @@
+@keyframes newDog {
+    0% {
+        transform: translateX(-70vw) translateY(0px) scale(-0%);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+@keyframes nextDog {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateX(70vw) translateY(0) scale(-0%);
+    }
+}
+
+@keyframes upUpdated {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateX(-50rem) translateY(-20vh) scale(-0%);
+    }
+}
+@keyframes backUpdated {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateX(50rem) translateY(20vh) scale(-0%);
+    }
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    .search {
+        margin-top: 5rem;
+
+        select {
+            margin-bottom: 1rem;
+            padding: .3rem 1rem;
+            font-size: 1rem;
+            background-color: rgb(37, 37, 37);
+            color: white;
+
+            &:hover {
+                cursor: pointer;
+                filter: brightness(110%);
+            }
+        }
+    }
+
+    .dog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .newDog {
+            animation: newDog 2s none 0s ease-in-out;
+        }
+
+        .nextDog {
+            animation: nextDog 1.5s none 0s ease-in-out;
+        }
+        img {
+            width: 40rem;
+            height: 28rem;
+            max-width: 40rem;
+            object-fit: contain;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: .5rem 4rem;
+            font-size: 1rem;
+            font-weight: 550;
+            border-radius: 3px;
+            border: 2px solid black;
+            background-color: #87CEFA;
+            transition: background-color .2s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #00BFFF;
+            }
+        }
+    }
+
+    .allDogs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 4rem;
+        width: 100vw;
+
+
+        .dogsImages {
+            display: grid;
+            grid-template-columns: repeat(5, 10rem);
+
+            .upUpdate {
+                animation: upUpdated 1s none 0s ease-in-out;
+            }
+            
+            .backUpdate {
+                animation: backUpdated 1s none 0s ease-in-out;
+            }
+
+            .img {
+                max-width: 10rem;
+    
+                img {
+                    width: 10rem;
+                    height: 10rem;
+                    padding: .5rem;
+                }
+            }
+        }
+
+        button {
+            margin-top: 20px;
+            padding: .5rem 4rem;
+            font-size: 1rem;
+            font-weight: 550;
+            border-radius: 3px;
+            border: 2px solid black;
+            background-color: #87CEFA;
+            transition: background-color .2s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #00BFFF;
+            }
+        }
+
+    }
+    
+}
+
+@media (max-width: 830px) {
+    .main {
+        .allDogs {
+            .dogsImages {
+                grid-template-columns: repeat(3, 10rem);
+            }
+        }
+    }
+}
+
+@media(max-width: 650px) {
+    .main{ 
+        .dog {
+            img {
+                width: 30rem;
+            }
+            button {
+                padding: .5rem ;
+            }
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .main{ 
+        .allDogs {
+            .dogsImages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .dog {
+            img {
+                width: calc(100vw - 20px);
+            }
+        }
+    }
+}
